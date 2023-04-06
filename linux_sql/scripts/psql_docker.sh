@@ -17,7 +17,7 @@ case "$cmd" in
   fi
 
   if [ $# -ne 3 ]; then
-    echo 'Create required username and password'
+    echo 'Create requires username and password'
     exit 1
   fi
   
