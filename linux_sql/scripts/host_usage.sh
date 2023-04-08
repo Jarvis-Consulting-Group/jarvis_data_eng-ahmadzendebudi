@@ -12,13 +12,16 @@ if [ $# -ne 5 ]; then
 fi
 
 # Usage info
+column_value_picker() {
+  col=$1; cat | awk -v col="$col" '{print $col}' | xargs
+}
 vmstat_out=$(vmstat --unit K)
 hostname=$(hostname -f)
-memory_free=$(echo "$vmstat_out" | tail -1 | awk -v col="4" '{print $col}' | xargs)
-cpu_idle=$(echo "$vmstat_out" | tail -1 | awk -v col="15" '{print $col}' | xargs)
-cpu_kernel=$(echo "$vmstat_out" | tail -1 | awk -v col="14" '{print $col}' | xargs)
-disk_io=$(echo "$vmstat_out" | tail -1 | awk -v col="10" '{print $col}' | xargs)
-disk_available=$(df -BM | grep "/dev/sda2" | awk -v col="4" '{print $col}' | sed "s/M//g")
+memory_free=$(echo "$vmstat_out" | tail -1 | column_value_picker 4)
+cpu_idle=$(echo "$vmstat_out" | tail -1 | column_value_picker 15)
+cpu_kernel=$(echo "$vmstat_out" | tail -1 | column_value_picker 14)
+disk_io=$(echo "$vmstat_out" | tail -1 | column_value_picker 10)
+disk_available=$(df -BM | grep "/dev/sda2" | column_value_picker 4 | sed "s/M//g")
 timestamp=$(date -u +"%Y-%m-%d %H:%M:%S")
 
 # Required for psql commands
