@@ -1,7 +1,7 @@
 #!/bin/bash
 
 lscpu_out=$(lscpu)
-vmstat_out=$(vmstat -s)
+vmstat_out=$(vmstat -s --unit M)
 
 #Hardware info
 hostname=$(hostname -f)
@@ -10,8 +10,8 @@ cpu_architecture=$(echo "$lscpu_out" | sed -nr "s/^Architecture:\s*(\w*)/\1/p")
 cpu_model=$(echo "$lscpu_out" | sed -nr "s/^Model name:\s*(\w*)/\1/p")
 cpu_mhz=$(echo "$lscpu_out" | sed -nr "s/^CPU MHz:\s*(\w*)/\1/p")
 l2_cache=$(echo "$lscpu_out" | sed -nr "s/^L2 cache:\s*(\w*)/\1/p")
-total_mem=$(echo "$vmstat_out" | sed -nr "s/(\d*) K total memory/\1/p")
-timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+total_mem=$(echo "$vmstat_out" | sed -nr "s/(\w*) total memory/\1/p")
+timestamp=$(date -u +"%Y-%m-%d %H:%M:%S")
 
 
 
