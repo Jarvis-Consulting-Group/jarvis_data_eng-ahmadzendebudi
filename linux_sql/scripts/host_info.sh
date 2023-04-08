@@ -11,7 +11,6 @@ if [ $# -ne 5 ]; then
   exit 1
 fi
 
-
 #Hardware specs
 lscpu_out=$(lscpu)
 vmstat_out=$(vmstat -s --unit K)
