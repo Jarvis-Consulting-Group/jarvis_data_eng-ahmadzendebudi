@@ -1,0 +1,160 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "GRP: 17.54/20"
+      ],
+      "degree": "Bachelor of Science",
+      "department": "Information Technology Engineering",
+      "duration": "2012-2016",
+      "school_name": "Shiraz University of Technology"
+    },
+    {
+      "awards_achievements": [
+        "GPA: 94/100"
+      ],
+      "degree": "Master of Science",
+      "department": "Computer Science",
+      "duration": "2021-2022",
+      "school_name": "Lakehead University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi",
+  "highlighted_projects": [
+    {
+      "description": "Designed and implemented a full stack solution for a travel planning website, where the user can select a city to see more information about the city, such as a short description of the city and the current weather. The frontend is developed using an Angular single-page application, backend is implemented with Spring Boot, and the solution is hosted using an Azure Kubernetes Service (AKS). The service is provisioned using Terraform.",
+      "git_url": "https://github.com/ahmadzendebudi/travel-planner",
+      "name": "Travel Planner"
+    },
+    {
+      "description": "Developed an Android application with +20k active installs for managing and keeping a record of daily expenses, bills, incomes, and borrowing money. Implemented using Java and android native development.",
+      "name": "Hafez Expense Manager"
+    },
+    {
+      "description": "Developed an Android application for practicing the spaced repetition technique used in the memorization and revision of study material. Implemented using Java and android native development.",
+      "git_url": "https://github.com/ahmadzendebudi/SpacedNotes",
+      "name": "Spaced Notes"
+    },
+    {
+      "description": "Designed and Implemented an edge computing network with mobile devices receiving computing tasks at random times. Mobile devices can either process the tasks themselves or offload them to an “edge device”. This decision can be made using a deep Q- learning model where the state of the network including task loads of different devices are fed to the Q-network and the network decides to offload a task or execute it on the edge device.\n",
+      "git_url": "https://github.com/ahmadzendebudi/edge_simulation1",
+      "name": "MDPI Journal Article: Designing a deep Q-Learning model with edge-level training for multi-level task offloading in edge computing networks"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Ahmad Zendebudi",
+  "others": [
+    {
+      "bullets": [
+        "Organized the annual Summer School events in the years 2014 and 2015 at Shiraz University of Technology and held over 20 sessions of Java programming workshops for final-year high school students.",
+        "Achieved a ranking of 17th out of over 50,000 candidates in the nationwide universities entrance examination for the field of Computer Science in the year 2016.",
+        "Achieved 2nd place out of over 50 attendees in the regional annual ACM competition, Shiraz 2015."
+      ],
+      "title": "Student Life and Volunteerism"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "duration": "2023-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "Abadgaz Lian",
+      "description": "o\tDeveloped the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.",
+      "duration": "2017-2020",
+      "title": "Junior IT Professional"
+    },
+    {
+      "company": "Shiraz University of Technology",
+      "description": "Arranged over ten extra class sessions, offering additional support under a lead teacher. Involved in the development of new material for course assignments.",
+      "duration": "2015-2015",
+      "title": "Teacher Assistant"
+    },
+    {
+      "company": "Shiraz University of Technology",
+      "description": "Organized meetings for showcasing students' projects and assignments. Coordinated with the lead teacher in students' assessment and mentorship",
+      "duration": "2014-2014",
+      "title": "Teacher Assistant"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "HTML5",
+      "CSS3",
+      "Responsive Web Design",
+      "RxJS",
+      "JUnit",
+      "Mockito",
+      "GitHub",
+      "Test-driven development",
+      "Design patterns",
+      "Clean code principles",
+      "Microservices architecture",
+      "Maven"
+    ],
+    "familiar": [
+      "OAuth2",
+      "Microsoft Azure",
+      "Terraform",
+      "Android Native Development",
+      "Unit Testing",
+      "Integration Testing"
+    ],
+    "proficient": [
+      "Java",
+      "Spring Framework",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "JPA",
+      "Agile/Scrum",
+      "Ducker",
+      "Kubernetes",
+      "REST APIs",
+      "Angular",
+      "Git"
+    ]
+  },
+  "summary": "I have always been passionate about solving challenging problems and building elegant structures. That is why I pursued computer science at both the bachelor’s and master’s levels and why I am working as a software developer at Jarvis. As a software developer, I get to unleash my creativity and logical thinking to craft algorithms and systems that are efficient, modular, and clean. I love what I do, and I am always eager to learn more and improve my skills. Software development is not only my passion but also my way of connecting with others who share the same enthusiasm. I enjoy exchanging ideas and insights with fellow software developers and working closely with them on the same projects to grow our skills and work as a well-oiled machine."
+}
