@@ -1,7 +1,7 @@
 # Preferred name (Characters only)
 name: "Ahmad Zendebudi"
 # Your GitHub repo root URL
-github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_demo
+github_repo_root_url: https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
@@ -13,24 +13,38 @@ skills:
   # At least 5 skills
   proficient:
     - Java
+    - Spring Framework
     - Linux/Bash
     - RDBMS/SQL
+    - JPA
     - Agile/Scrum
+    - Ducker
+    - Kubernetes
+    - REST APIs
+    - Angular
     - Git
   # At least 5 skills
   competent:
-    - Donec
-    - fermentum
-    - Donec
-    - fermentum
-    - Donec
+    - HTML5
+    - CSS3
+    - Responsive Web Design
+    - RxJS
+    - JUnit
+    - Mockito
+    - GitHub
+    - Test-driven development
+    - Design patterns
+    - Clean code principles
+    - Microservices architecture
+    - Maven
   # At least 5 skills
   familiar:
-    - Donec
-    - fermentum
-    - fermentum
-    - fermentum
-    - fermentum
+    - OAuth2
+    - Microsoft Azure
+    - Terraform
+    - Android Native Development
+    - Unit Testing
+    - Integration Testing
 
 # List of Jarvis projects
 jarvis_projects:
@@ -65,14 +79,26 @@ jarvis_projects:
 # Feel free to add more projects
 highlighted_projects:
     #project name
-  - name: "Web app for resturant"
+  - name: "Travel Planner"
     #URL is optional
-    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    git_url: "https://github.com/ahmadzendebudi/travel-planner"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-  - name: "Machine Learning"
-    git_url:
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+    description: Designed and implemented a full stack solution for a travel planning website, where the user can select a city to see more information about the city, such as a short description of the city and the current weather. The frontend is developed using an Angular single-page application, backend is implemented with Spring Boot, and the solution is hosted using an Azure Kubernetes Service (AKS). The service is provisioned using Terraform.
+  
+  - name: "Hafez Expense Manager"
+    description: Developed an Android application with +20k active installs for managing and keeping a record of daily expenses, bills, incomes, and borrowing money. Implemented using Java and android native development.
+  
+  - name: "Spaced Notes"
+    git_url: "https://github.com/ahmadzendebudi/SpacedNotes"
+    description: Developed an Android application for practicing the spaced repetition technique used in the memorization and revision of study material. Implemented using Java and android native development.
+  
+  - name: "MDPI Journal Article: Designing a deep Q-Learning model with edge-level training for multi-level task offloading in edge computing networks"
+    git_url: "https://github.com/ahmadzendebudi/edge_simulation1"
+    description: > 
+      Designed and Implemented an edge computing network with mobile devices receiving computing tasks at random times. Mobile
+      devices can either process the tasks themselves or offload them to an “edge device”. This decision can be made using a deep Q-
+      learning model where the state of the network including task loads of different devices are fed to the Q-network and the network
+      decides to offload a task or execute it on the edge device.
 
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
@@ -81,43 +107,44 @@ professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
   - title: "Software Developer"
     company: "Jarvis"
-    duration: "2020-present"
+    duration: "2023-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
-  - title: "Tutor"
-    company: "XYZ Company"
-    duration: "2019"
-    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
+  - title: "Junior IT Professional"
+    company: "Abadgaz Lian"
+    duration: "2017-2020"
+    description: "o	Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services."
+  - title: "Teacher Assistant"
+    company: "Shiraz University of Technology"
+    duration: "2015-2015"
+    description: "Arranged over ten extra class sessions, offering additional support under a lead teacher. Involved in the development of new material for course assignments."
+  - title: "Teacher Assistant"
+    company: "Shiraz University of Technology"
+    duration: "2014-2014"
+    description: "Organized meetings for showcasing students' projects and assignments. Coordinated with the lead teacher in students' assessment and mentorship"
 
 #List of edcuation
 education: 
-  - school_name: "XYZ university"
+  - school_name: "Shiraz University of Technology"
     duration: "2012-2016"
-    degree: "Bachelor of Applied Sciences"
-    department: "Electrical and Computer Engineering"
+    degree: "Bachelor of Science"
+    department: "Information Technology Engineering"
     # optional
     awards_achievements: 
-      - "Scholarship"
-      - "Dean's List (2015, 2016): Ut enim ad minim veniam"
-      - "GPA: 3.8/4.0"
-  - school_name: "XYZ university"
-    duration: "2016-2018"
-    degree: "Master of Engineering"
-    department: "Electrical and Computer Engineering"
+      - "GRP: 17.54/20"
+  - school_name: "Lakehead University"
+    duration: "2021-2022"
+    degree: "Master of Science"
+    department: "Computer Science"
     awards_achievements: 
+      - "GPA: 94/100"
 
 #Optional section
 others:
     #category
-  - title: "Certificates"
+  - title: "Student Life and Volunteerism"
     #list of items
     bullets:
-      - "Udacity Machine Learning (2019)"
-  - title: "Awards"
-    bullets:
-      - "Winner"
-  - title: "Activities/Hobbies"
-    bullets:
-      - "Basketball player"
-      - "Competitive gaming"
-      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+      - "Organized the annual Summer School events in the years 2014 and 2015 at Shiraz University of Technology and held over 20 sessions of Java programming workshops for final-year high school students."
+      - "Achieved a ranking of 17th out of over 50,000 candidates in the nationwide universities entrance examination for the field of Computer Science in the year 2016."
+      - "Achieved 2nd place out of over 50 attendees in the regional annual ACM competition, Shiraz 2015."

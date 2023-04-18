@@ -2,34 +2,43 @@
   "education": [
     {
       "awards_achievements": [
-        "Scholarship",
-        "Dean's List (2015, 2016): Ut enim ad minim veniam",
-        "GPA: 3.8/4.0"
+        "GRP: 17.54/20"
       ],
-      "degree": "Bachelor of Applied Sciences",
-      "department": "Electrical and Computer Engineering",
+      "degree": "Bachelor of Science",
+      "department": "Information Technology Engineering",
       "duration": "2012-2016",
-      "school_name": "XYZ university"
+      "school_name": "Shiraz University of Technology"
     },
     {
-      "awards_achievements": null,
-      "degree": "Master of Engineering",
-      "department": "Electrical and Computer Engineering",
-      "duration": "2016-2018",
-      "school_name": "XYZ university"
+      "awards_achievements": [
+        "GPA: 94/100"
+      ],
+      "degree": "Master of Science",
+      "department": "Computer Science",
+      "duration": "2021-2022",
+      "school_name": "Lakehead University"
     }
   ],
-  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_demo",
+  "github_repo_root_url": "https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi",
   "highlighted_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
-      "name": "Web app for resturant"
+      "description": "Designed and implemented a full stack solution for a travel planning website, where the user can select a city to see more information about the city, such as a short description of the city and the current weather. The frontend is developed using an Angular single-page application, backend is implemented with Spring Boot, and the solution is hosted using an Azure Kubernetes Service (AKS). The service is provisioned using Terraform.",
+      "git_url": "https://github.com/ahmadzendebudi/travel-planner",
+      "name": "Travel Planner"
     },
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": null,
-      "name": "Machine Learning"
+      "description": "Developed an Android application with +20k active installs for managing and keeping a record of daily expenses, bills, incomes, and borrowing money. Implemented using Java and android native development.",
+      "name": "Hafez Expense Manager"
+    },
+    {
+      "description": "Developed an Android application for practicing the spaced repetition technique used in the memorization and revision of study material. Implemented using Java and android native development.",
+      "git_url": "https://github.com/ahmadzendebudi/SpacedNotes",
+      "name": "Spaced Notes"
+    },
+    {
+      "description": "Designed and Implemented an edge computing network with mobile devices receiving computing tasks at random times. Mobile devices can either process the tasks themselves or offload them to an “edge device”. This decision can be made using a deep Q- learning model where the state of the network including task loads of different devices are fed to the Q-network and the network decides to offload a task or execute it on the edge device.\n",
+      "git_url": "https://github.com/ahmadzendebudi/edge_simulation1",
+      "name": "MDPI Journal Article: Designing a deep Q-Learning model with edge-level training for multi-level task offloading in edge computing networks"
     }
   ],
   "jarvis_projects": [
@@ -77,59 +86,73 @@
   "others": [
     {
       "bullets": [
-        "Udacity Machine Learning (2019)"
+        "Organized the annual Summer School events in the years 2014 and 2015 at Shiraz University of Technology and held over 20 sessions of Java programming workshops for final-year high school students.",
+        "Achieved a ranking of 17th out of over 50,000 candidates in the nationwide universities entrance examination for the field of Computer Science in the year 2016.",
+        "Achieved 2nd place out of over 50 attendees in the regional annual ACM competition, Shiraz 2015."
       ],
-      "title": "Certificates"
-    },
-    {
-      "bullets": [
-        "Winner"
-      ],
-      "title": "Awards"
-    },
-    {
-      "bullets": [
-        "Basketball player",
-        "Competitive gaming",
-        "Volunteer, ABC Food bank: Ut enim ad minim veniam"
-      ],
-      "title": "Activities/Hobbies"
+      "title": "Student Life and Volunteerism"
     }
   ],
   "professional_experience": [
     {
       "company": "Jarvis",
       "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2020-present",
+      "duration": "2023-present",
       "title": "Software Developer"
     },
     {
-      "company": "XYZ Company",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2019",
-      "title": "Tutor"
+      "company": "Abadgaz Lian",
+      "description": "o\tDeveloped the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.",
+      "duration": "2017-2020",
+      "title": "Junior IT Professional"
+    },
+    {
+      "company": "Shiraz University of Technology",
+      "description": "Arranged over ten extra class sessions, offering additional support under a lead teacher. Involved in the development of new material for course assignments.",
+      "duration": "2015-2015",
+      "title": "Teacher Assistant"
+    },
+    {
+      "company": "Shiraz University of Technology",
+      "description": "Organized meetings for showcasing students' projects and assignments. Coordinated with the lead teacher in students' assessment and mentorship",
+      "duration": "2014-2014",
+      "title": "Teacher Assistant"
     }
   ],
   "skills": {
     "competent": [
-      "Donec",
-      "fermentum",
-      "Donec",
-      "fermentum",
-      "Donec"
+      "HTML5",
+      "CSS3",
+      "Responsive Web Design",
+      "RxJS",
+      "JUnit",
+      "Mockito",
+      "GitHub",
+      "Test-driven development",
+      "Design patterns",
+      "Clean code principles",
+      "Microservices architecture",
+      "Maven"
     ],
     "familiar": [
-      "Donec",
-      "fermentum",
-      "fermentum",
-      "fermentum",
-      "fermentum"
+      "OAuth2",
+      "Microsoft Azure",
+      "Terraform",
+      "Android Native Development",
+      "Unit Testing",
+      "Integration Testing"
     ],
     "proficient": [
       "Java",
+      "Spring Framework",
       "Linux/Bash",
       "RDBMS/SQL",
+      "JPA",
       "Agile/Scrum",
+      "Ducker",
+      "Kubernetes",
+      "REST APIs",
+      "Angular",
       "Git"
     ]
   },
