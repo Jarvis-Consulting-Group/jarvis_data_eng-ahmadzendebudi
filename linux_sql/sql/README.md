@@ -2,7 +2,7 @@
 A number of SQL practice problems along with my proposed solution. All the solutions were tested individually and all produce the desired output. These queries can also be found in [queries.sql](./queries.sql).
 ## Modification to Data
 
-##### Problem:
+##### Problem #1:
 Adding a new row to `cd.facilities` with values: `facid: 9, Name: 'Spa', membercost: 20, guestcost: 30, initialoutlay: 100000, monthlymaintenance: 800`
 ##### Solution:
 ```sql
@@ -13,7 +13,7 @@ values (9, 'Spa', 20, 30, 100000, 800);
 
 ---
 
-##### Problem:
+##### Problem #2:
 Adding a new row to `cd.facilities` with values: `Name: 'Spa', membercost: 20, guestcost: 30, initialoutlay: 100000, monthlymaintenance: 800`, `facid` auto generated 
 
 ##### Solution:
@@ -26,7 +26,7 @@ insert into cd.facilities(facid, name, membercost,
 
 ---
 
-##### Problem:
+##### Problem #3:
 Update a row with name `Tennis Court 2` to have `initialoutlay = 10000` 
 
 ##### Solution:
@@ -35,7 +35,7 @@ update cd.facilities set initialoutlay = 10000 where name = 'Tennis Court 2'
 ```
 
 ---
-##### Problem:
+##### Problem #4:
 Update `Tennis Court 2` to have cost 10% higher than `Tennis Court 1`
 ##### Solution:
 ```sql
@@ -46,14 +46,14 @@ from (select guestcost, membercost from cd.facilities where name = 'Tennis Court
 where name = 'Tennis Court 2'
 ```
 ---
-##### Problem:
+##### Problem #5:
 Remove all entries in the `cd.booking` table
 ##### Solution:
 ```sql
 truncate cd.bookings
 ```
 ---
-##### Problem:
+##### Problem #6:
 Remove entry with id 37 in the `cd.booking` table
 ##### Solution:
 ```sql
@@ -62,7 +62,7 @@ delete from cd.members where memid = 37
 ---
 
 ## Basics
-##### Problem:
+##### Problem #7:
 View facilities that charge a fee and the fee is less than 1/50th of the monthly maintenance
 ##### Solution:
 ```sql
@@ -71,7 +71,7 @@ where membercost > 0 and membercost < monthlymaintenance / 50
 ```
 ---
 
-##### Problem:
+##### Problem #8:
 All facilities with word `Tennis` in their name
 ##### Solution:
 ```sql
@@ -79,14 +79,14 @@ select * from cd.facilities where name like '%Tennis%';
 ```
 ---
 
-##### Problem:
+##### Problem #9:
 Facilities with id 1 or 5:
 ##### Solution:
 ```sql
 select * from cd.facilities where facid in (1, 5);
 ```
 ---
-##### Problem:
+##### Problem #10:
 Members who joined after the start of September 2012
 ##### Solution:
 ```sql
@@ -94,7 +94,7 @@ Select memid, surname, firstname, joindate from cd.members
 where joindate >= '2012-09-1';
 ```
 ---
-##### Problem:
+##### Problem #11:
 A list of surnames of members and facility names
 ##### Solution:
 ```sql
@@ -105,7 +105,7 @@ select name from cd.facilities;
 ---
 
 ## Join
-##### Problem:
+##### Problem #12:
 A list of starttimes by members named 'David Farrell'
 ##### Solution:
 ```sql
@@ -115,7 +115,7 @@ where firstname = 'David' and surname = 'Farrell'
 ```
 
 ---
-##### Problem:
+##### Problem #13:
 A list of starttimes and facility name for only Tennis courts on `2012-09-21` 
 ##### Solution:
 ```sql
@@ -126,7 +126,7 @@ where starttime >= '2012-09-21' and starttime < '2012-9-22' and cd.facilities.na
 order by cd.bookings.starttime 
 ```
 ---
-##### Problem:
+##### Problem #14:
 Select all members and also show who recommended them, if any
 ##### Solution:
 ```sql
@@ -137,7 +137,7 @@ left join cd.members as m2 on m1.recommendedby = m2.memid
 order by m1.surname, m1.firstname
 ```
 ---
-##### Problem:
+##### Problem #15:
 Select all members and also show who recommended them, if any
 ##### Solution:
 ```sql
@@ -148,7 +148,7 @@ left join cd.members as m2 on m1.recommendedby = m2.memid
 order by m1.surname, m1.firstname
 ```
 ---
-##### Problem:
+##### Problem #16:
 Select all members who recommended another member
 ##### Solution:
 ```sql
@@ -158,7 +158,7 @@ inner join cd.members as m2 on m1.memid = m2.recommendedby
 order by surname, firstname
 ```
 ---
-##### Problem:
+##### Problem #17:
 A list of all members and their recommender without using join
 ##### Solution:
 ```sql
@@ -171,7 +171,7 @@ order by member
 ```
 
 ---
-##### Problem:
+##### Problem #18:
 A list of all members and the number of recommendations they made
 ##### Solution:
 ```sql
@@ -183,7 +183,7 @@ order by recommendedby
 ```
 
 ---
-##### Problem:
+##### Problem #19:
 A list of total number of slots booked in each facility
 ##### Solution:
 ```sql
@@ -194,7 +194,7 @@ order by facid
 ```
 
 ---
-##### Problem:
+##### Problem #20:
 A list of total number of slots booked in each facility in the month of September 2012
 ##### Solution:
 ```sql
@@ -205,7 +205,7 @@ group by facid
 order by sum(slots)
 ```
 ---
-##### Problem:
+##### Problem #21:
 A list of total number of slots booked in each facility and each month in the year of 2012
 ##### Solution:
 ```sql
@@ -216,14 +216,14 @@ group by facid, month
 order by facid, month
 ```
 ---
-##### Problem:
+##### Problem #22:
 Total number of members who made at least one booking
 ##### Solution:
 ```sql
 select count(distinct memid) from cd.bookings
 ```
 ---
-##### Problem:
+##### Problem #23:
 A list of each member and their first booking after `2012-09-01`
 ##### Solution:
 ```sql
@@ -235,7 +235,7 @@ group by cd.members.memid
 order by cd.members.memid
 ```
 ---
-##### Problem:
+##### Problem #24:
 A list of each member and each with the total number of members count as one column
 ##### Solution:
 ```sql
@@ -243,7 +243,7 @@ select count(*) over(), firstname, surname
 from cd.members
 ```
 ---
-##### Problem:
+##### Problem #25:
 A list of each member ordered by date of joining. The table should include a row number column too.
 ##### Solution:
 ```sql
@@ -252,7 +252,7 @@ from cd.members
 order by joindate
 ```
 ---
-##### Problem:
+##### Problem #26:
 Output the facility id that has the most number of slots booked. output multiple ones if more than one have the maximum number.
 ##### Solution:
 ```sql
@@ -265,7 +265,7 @@ select facid, total from (
 where rank = 1
 ```
 ---
-##### Problem:
+##### Problem #27:
 Output member names formated as `surname, firstname`
 ##### Solution:
 ```sql
@@ -273,7 +273,7 @@ select surname || ', ' || firstname from cd.members
 ```
 
 ---
-##### Problem:
+##### Problem #28:
 Output member id and the telephone number only if the telephone number has parentheses
 ##### Solution:
 ```sql
@@ -282,7 +282,7 @@ where telephone like '(%)%'
 order by memid
 ```
 ---
-##### Problem:
+##### Problem #29:
 Output a list of the count of members who's surname starts with a specific alphabetic character
 ##### Solution:
 ```sql
