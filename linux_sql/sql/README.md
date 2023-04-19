@@ -1,4 +1,5 @@
-# Practice SQL Queries
+# Introduction
+A number of SQL practice problems along with my proposed solution. All the solutions were tested individually and all produce the desired output. These queries can also be found in [queries.sql](./queries.sql).
 ## Modification to Data
 
 ##### Problem:
