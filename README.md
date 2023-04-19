@@ -15,23 +15,7 @@ I have always been passionate about solving challenging problems and building el
 Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-
-**Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/core_java)]:
-      
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-
-**Springboot App** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/springboot)]: Not Started
-
-**Python Data Analytics** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/python_data_anlytics)]: Not Started
-
-**Hadoop** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/hadoop)]: Not Started
-
-**Spark** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/spark)]: Not Started
-
-**Cloud/DevOps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/cloud_devops)]: Not Started
+**Cluster Monitor** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi/tree/master/linux_sql)]: Implemented an automated solution to provide Linux Cluster Administrators with information about hardware resource usage and hardware specs of every server in the cluster. The hardware specs and usage data were collected using bash scripts via commands such as `lscpu` and `vmstat`. Docker was used for spinning up a Postgres container, and SQL queries were used to design the database schema and store the retrieved data in the database.
 
 
 ## Highlighted Projects
@@ -57,11 +41,11 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Education
-**Shiraz University of Technology (2012-2016)**, Bachelor of Science, Information Technology Engineering
-- GRP: 17.54/20
-
 **Lakehead University (2021-2022)**, Master of Science, Computer Science
 - GPA: 94/100
+
+**Shiraz University of Technology (2012-2016)**, Bachelor of Science, Information Technology Engineering
+- GRP: 17.54/20
 
 
 ## Miscellaneous

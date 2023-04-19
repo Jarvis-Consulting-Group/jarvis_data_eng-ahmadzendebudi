@@ -2,21 +2,21 @@
   "education": [
     {
       "awards_achievements": [
-        "GRP: 17.54/20"
-      ],
-      "degree": "Bachelor of Science",
-      "department": "Information Technology Engineering",
-      "duration": "2012-2016",
-      "school_name": "Shiraz University of Technology"
-    },
-    {
-      "awards_achievements": [
         "GPA: 94/100"
       ],
       "degree": "Master of Science",
       "department": "Computer Science",
       "duration": "2021-2022",
       "school_name": "Lakehead University"
+    },
+    {
+      "awards_achievements": [
+        "GRP: 17.54/20"
+      ],
+      "degree": "Bachelor of Science",
+      "department": "Information Technology Engineering",
+      "duration": "2012-2016",
+      "school_name": "Shiraz University of Technology"
     }
   ],
   "github_repo_root_url": "https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-ahmadzendebudi",
@@ -43,43 +43,9 @@
   ],
   "jarvis_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "description": "Implemented an automated solution to provide Linux Cluster Administrators with information about hardware resource usage and hardware specs of every server in the cluster. The hardware specs and usage data were collected using bash scripts via commands such as `lscpu` and `vmstat`. Docker was used for spinning up a Postgres container, and SQL queries were used to design the database schema and store the retrieved data in the database.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
-    },
-    {
-      "description": [
-        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-      ],
-      "git_url": "/core_java",
-      "name": "Core Java Apps"
-    },
-    {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
-    },
-    {
-      "description": "",
-      "git_url": "/python_data_anlytics",
-      "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
     }
   ],
   "name": "Ahmad Zendebudi",
