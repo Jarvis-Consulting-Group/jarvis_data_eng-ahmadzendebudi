@@ -138,7 +138,7 @@ education:
     department: "Information Technology Engineering"
     # optional
     awards_achievements: 
-      - "GRP: 17.54/20"
+      - "GPA: 17.54/20"
 
 #Optional section
 others:

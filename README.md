@@ -45,7 +45,7 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 - GPA: 94/100
 
 **Shiraz University of Technology (2012-2016)**, Bachelor of Science, Information Technology Engineering
-- GRP: 17.54/20
+- GPA: 17.54/20
 
 
 ## Miscellaneous
