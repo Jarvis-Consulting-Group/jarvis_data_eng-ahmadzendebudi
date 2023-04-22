@@ -62,13 +62,13 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "description": "Executed various projects in a fast-paced and agile setting, utilizing Java, Docker, Git, GitHub, SQL, and Bash Scripting technologies.",
       "duration": "2023-present",
       "title": "Software Developer"
     },
     {
       "company": "Abadgaz Lian",
-      "description": "o\tDeveloped the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.",
+      "description": "Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.",
       "duration": "2017-2020",
       "title": "Junior IT Professional"
     },

@@ -31,9 +31,9 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2023-present)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Software Developer, Jarvis (2023-present)**: Executed various projects in a fast-paced and agile setting, utilizing Java, Docker, Git, GitHub, SQL, and Bash Scripting technologies.
 
-**Junior IT Professional, Abadgaz Lian (2017-2020)**: o	Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.
+**Junior IT Professional, Abadgaz Lian (2017-2020)**: Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services.
 
 **Teacher Assistant, Shiraz University of Technology (2015-2015)**: Arranged over ten extra class sessions, offering additional support under a lead teacher. Involved in the development of new material for course assignments.
 

@@ -110,11 +110,11 @@ professional_experience:
     company: "Jarvis"
     duration: "2023-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
+    description: "Executed various projects in a fast-paced and agile setting, utilizing Java, Docker, Git, GitHub, SQL, and Bash Scripting technologies."
   - title: "Junior IT Professional"
     company: "Abadgaz Lian"
     duration: "2017-2020"
-    description: "o	Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services."
+    description: "Developed the Firm's in-house financial record-keeping system with features such as form workflows, data analytics, management dashboard, and report generation. It was used to hold 2000+ receipts and 400+ products and services."
   - title: "Teacher Assistant"
     company: "Shiraz University of Technology"
     duration: "2015-2015"
