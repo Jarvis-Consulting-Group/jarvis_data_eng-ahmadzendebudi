@@ -5,5 +5,6 @@
       "scheme": "file",
       "pattern": "profile/profile.yaml"
     }
-  ]
+  ],
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
