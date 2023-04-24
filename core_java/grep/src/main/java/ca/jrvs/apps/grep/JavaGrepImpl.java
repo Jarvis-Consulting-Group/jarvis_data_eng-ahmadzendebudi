@@ -2,8 +2,12 @@ package ca.jrvs.apps.grep;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,8 +65,15 @@ public class JavaGrepImpl implements JavaGrep{
 
   @Override
   public List<String> listLines(File inputFile) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'listLines'");
+    if (inputFile == null) {
+      throw new RuntimeException("inputFile is null");
+    }
+    try {
+      return Files.lines(inputFile.toPath()).collect(Collectors.toList());
+    } catch (IOException e) {
+      logger.error("Error reading file: " + inputFile, e);
+      return null;
+    }
   }
 
   @Override
@@ -73,8 +84,13 @@ public class JavaGrepImpl implements JavaGrep{
 
   @Override
   public void writeToFile(List<String> lines) throws IOException {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'writeToFile'");
+    File outFile = new File(this.outFile);
+    if (lines == null || lines.isEmpty()) {
+      outFile.delete();
+      outFile.createNewFile();
+    }
+    
+    Files.write(outFile.toPath(), lines);
   }
 
 }
