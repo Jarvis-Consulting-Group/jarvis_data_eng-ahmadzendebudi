@@ -3,10 +3,10 @@ package ca.jrvs.apps.grep;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import java.util.function.Supplier;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class JavaGrepImpl implements JavaGrep{
+public class JavaGrepImpl implements JavaGrep {
 
   private final Logger logger = LoggerFactory.getLogger(JavaGrepImpl.class);
 
@@ -29,8 +29,12 @@ public class JavaGrepImpl implements JavaGrep{
 
   @Override
   public void process() throws IOException {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'process'");
+    List<File> files = listFiles(rootPath);
+    List<String> matchingLines = files.stream()
+        .flatMap(file -> this.listLines(file).stream())
+        .filter(line -> this.containsPattern(line))
+        .collect(Collectors.toList());
+    this.writeToFile(matchingLines);
   }
 
   @Override
@@ -46,13 +50,15 @@ public class JavaGrepImpl implements JavaGrep{
   }
 
   /**
-   * List files inside a given directory. If the given file is not a directory, an empty list is returned
-   * @param rootDir The root directory to list the containing files  
+   * List files inside a given directory. If the given file is not a directory, an
+   * empty list is returned
+   * 
+   * @param rootDir The root directory to list the containing files
    * @return A list of files inside the rootDir
    */
   private List<File> _listFiles(File rootDir) {
     List<File> files = new ArrayList<>();
-    
+
     for (File file : rootDir.listFiles()) {
       if (file.isDirectory()) {
         files.addAll(_listFiles(file));
@@ -78,8 +84,8 @@ public class JavaGrepImpl implements JavaGrep{
 
   @Override
   public boolean containsPattern(String line) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'containsPattern'");
+    Pattern pattern = Pattern.compile("^" + this.regex + "$");
+    return pattern.matcher(line).find();
   }
 
   @Override
@@ -89,7 +95,7 @@ public class JavaGrepImpl implements JavaGrep{
       outFile.delete();
       outFile.createNewFile();
     }
-    
+
     Files.write(outFile.toPath(), lines);
   }
 
