@@ -96,19 +96,23 @@ public class JavaGrepImplTest {
   @Test
   public void writeToFile() throws IOException {
     File outFileDir = new File("./tmp/testing/writeToFile");
-    outFileDir.mkdirs();
-    File outFile = new File(outFileDir, "outFile.txt");
-    JavaGrepImpl javaGrep = new JavaGrepImpl(null, null, outFile.getAbsolutePath());
-    
-    List<String> lines = Arrays.asList("Line1", "Line2", "Line3");
-    javaGrep.writeToFile(lines);
-    List<String> LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
-    assertIterableEquals(lines, LinesInFile);
-
-    lines = Arrays.asList();
-    javaGrep.writeToFile(lines);
-    LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
-    assertIterableEquals(lines, LinesInFile);
+    try {
+      outFileDir.mkdirs();
+      File outFile = new File(outFileDir, "outFile.txt");
+      JavaGrepImpl javaGrep = new JavaGrepImpl(null, null, outFile.getAbsolutePath());
+      
+      List<String> lines = Arrays.asList("Line1", "Line2", "Line3");
+      javaGrep.writeToFile(lines);
+      List<String> LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
+      assertIterableEquals(lines, LinesInFile);
+  
+      lines = Arrays.asList();
+      javaGrep.writeToFile(lines);
+      LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
+      assertIterableEquals(lines, LinesInFile);
+    } finally {
+      FileUtils.deleteDirectory(outFileDir);
+    }
   }
 
   @Test
@@ -124,7 +128,7 @@ public class JavaGrepImplTest {
     assertFalse(javaGrep.containsPattern("168.3.4.1.2"));
     assertFalse(javaGrep.containsPattern("168.3.4.1   "));
 
-    regex = "\s*";
+    regex = " *";
     javaGrep = new JavaGrepImpl(regex, null, null);
 
     assertTrue(javaGrep.containsPattern("   "));

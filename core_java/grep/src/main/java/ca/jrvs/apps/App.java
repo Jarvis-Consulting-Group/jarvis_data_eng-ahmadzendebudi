@@ -9,7 +9,7 @@ import ca.jrvs.apps.grep.JavaGrep;
 import ca.jrvs.apps.grep.JavaGrepImpl;
 
 public class App {
-    private static final Logger logger = LoggerFactory.getLogger(JavaGrepImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
         if (args.length != 3) {
