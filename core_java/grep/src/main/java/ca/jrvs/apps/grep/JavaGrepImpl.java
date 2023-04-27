@@ -28,10 +28,9 @@ public class JavaGrepImpl implements JavaGrep {
 
   @Override
   public void process() throws IOException {
-    Stream<Path> files = listFiles(rootPath);
-    Stream<String> matchingLines = files
-        .flatMap(file -> this.listLines(file))
-        .filter(line -> this.containsPattern(line));
+    Stream<String> matchingLines = listFiles(rootPath)
+        .flatMap(this::listLines)
+        .filter(this::containsPattern);
     this.writeToFile(matchingLines);
   }
 
@@ -40,7 +39,7 @@ public class JavaGrepImpl implements JavaGrep {
     if (rootDir == null) {
       throw new RuntimeException("rootDir is null");
     }
-    
+
     Path rootDirPath = Paths.get(rootDir);
 
     if (!Files.isDirectory(rootDirPath)) {
@@ -60,22 +59,15 @@ public class JavaGrepImpl implements JavaGrep {
    */
   private Stream<Path> _listFiles(Path rootDir) {
     try {
-      return Files.list(rootDir)
-        .flatMap(path -> {
-          if (!Files.isDirectory(path)) {
-            return Stream.of(path);
-          }
-          
-          try {
-            return Files.list(path);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        });
+      return Files.list(rootDir).flatMap(path -> {
+        if (!Files.isDirectory(path)) {
+          return Stream.of(path);
+        }
+        return _listFiles(path);
+      });
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    
   }
 
   @Override
