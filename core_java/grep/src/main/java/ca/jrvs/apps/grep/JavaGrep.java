@@ -1,8 +1,8 @@
 package ca.jrvs.apps.grep;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.nio.file.Path;
+import java.util.stream.Stream;
 
 public interface JavaGrep {
   /**
@@ -16,14 +16,14 @@ public interface JavaGrep {
    * @param rootDir input Directory
    * @return files under the rootDir
    */
-  List<File> listFiles(String rootDir);
+  Stream<Path> listFiles(String rootDir);
 
   /**
    * Read a file and return all the lines
    * @param inputFile file to be read
    * @return lines of text inside the file
    */
-  List<String> listLines(File inputFile);
+  Stream<String> listLines(Path inputFile);
 
   /**
    * Check if a line matches the regex pattern (passed by user)
@@ -37,7 +37,7 @@ public interface JavaGrep {
    * @param lines lines to be written to the file
    * @throws IOException if write failed
    */
-  void writeToFile(List<String> lines) throws IOException;
+  void writeToFile(Stream<String> lines) throws IOException;
 
   String getRootPath();
   void setRootPath(String rootPath);

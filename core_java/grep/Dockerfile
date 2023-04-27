@@ -7,5 +7,5 @@ RUN mvn dependency:resolve
 COPY src src
 RUN mvn package
 
-COPY ./target/grep*.jar ./app.jar
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "./app.jar"]
+RUN cp ./target/grep*.jar ./app.jar
+ENTRYPOINT ["java", "-jar", "./app.jar"]

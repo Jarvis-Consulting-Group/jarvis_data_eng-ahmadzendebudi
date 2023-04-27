@@ -9,9 +9,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
@@ -38,17 +40,17 @@ public class JavaGrepImplTest {
 
       JavaGrepImpl javaGrep = new JavaGrepImpl(null, fileRoot.getAbsolutePath(), null);
 
-      List<File> files = javaGrep.listFiles(fileRoot.getAbsolutePath());
-
-      assertEquals(2, files.size());
-      assertTrue(files.get(0).getAbsolutePath().equals(file1.getAbsolutePath()) ||
-          files.get(0).getAbsolutePath().equals(file2.getAbsolutePath()));
+      Stream<Path> paths = javaGrep.listFiles(fileRoot.getAbsolutePath());
+      List<Path> pathList = paths.collect(Collectors.toList());
+      assertEquals(2, pathList.size());
+      assertTrue(Files.isSameFile(pathList.get(0), file1.toPath()) ||
+                 Files.isSameFile(pathList.get(1), file1.toPath()));
 
       file1.delete();
       file2.delete();
 
-      files = javaGrep.listFiles(fileRoot.getAbsolutePath());
-      assertEquals(0, files.size());
+      paths = javaGrep.listFiles(fileRoot.getAbsolutePath());
+      assertEquals(0, paths.count());
     } finally {
       FileUtils.deleteDirectory(fileRoot);
     }
@@ -76,13 +78,13 @@ public class JavaGrepImplTest {
 
       JavaGrepImpl javaGrep = new JavaGrepImpl(null, fileRoot.getAbsolutePath(), null);
 
-      List<String> lines = javaGrep.listLines(file1);
+      List<String> lines = javaGrep.listLines(file1.toPath()).collect(Collectors.toList());
 
       assertEquals(2, lines.size());
       assertEquals("Two", lines.get(0));
       assertEquals("Lines", lines.get(1));
 
-      lines = javaGrep.listLines(file2);
+      lines = javaGrep.listLines(file2.toPath()).collect(Collectors.toList());
 
       assertEquals(3, lines.size());
       assertEquals("Three", lines.get(0));
@@ -102,12 +104,12 @@ public class JavaGrepImplTest {
       JavaGrepImpl javaGrep = new JavaGrepImpl(null, null, outFile.getAbsolutePath());
       
       List<String> lines = Arrays.asList("Line1", "Line2", "Line3");
-      javaGrep.writeToFile(lines);
+      javaGrep.writeToFile(lines.stream());
       List<String> LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
       assertIterableEquals(lines, LinesInFile);
   
       lines = Arrays.asList();
-      javaGrep.writeToFile(lines);
+      javaGrep.writeToFile(lines.stream());
       LinesInFile = Files.lines(outFile.toPath()).collect(Collectors.toList());
       assertIterableEquals(lines, LinesInFile);
     } finally {

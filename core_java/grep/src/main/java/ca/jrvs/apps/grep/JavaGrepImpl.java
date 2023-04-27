@@ -1,12 +1,16 @@
 package ca.jrvs.apps.grep;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,24 +32,26 @@ public class JavaGrepImpl implements JavaGrep {
 
   @Override
   public void process() throws IOException {
-    List<File> files = listFiles(rootPath);
-    List<String> matchingLines = files.stream()
-        .flatMap(file -> this.listLines(file).stream())
-        .filter(line -> this.containsPattern(line))
-        .collect(Collectors.toList());
+    Stream<Path> files = listFiles(rootPath);
+    Stream<String> matchingLines = files
+        .flatMap(file -> this.listLines(file))
+        .filter(line -> this.containsPattern(line));
     this.writeToFile(matchingLines);
   }
 
   @Override
-  public List<File> listFiles(String rootDir) {
+  public Stream<Path> listFiles(String rootDir) {
     if (rootDir == null) {
       throw new RuntimeException("rootDir is null");
     }
-    File rootDirFile = new File(rootDir);
-    if (!rootDirFile.isDirectory()) {
-      return new ArrayList<>();
+    
+    Path rootDirPath = Paths.get(rootDir);
+
+    if (!Files.isDirectory(rootDirPath)) {
+      return Stream.of(rootDirPath);
     }
-    return _listFiles(rootDirFile);
+
+    return _listFiles(rootDirPath);
   }
 
   /**
@@ -54,30 +60,37 @@ public class JavaGrepImpl implements JavaGrep {
    * 
    * @param rootDir The root directory to list the containing files
    * @return A list of files inside the rootDir
+   * @throws IOException
    */
-  private List<File> _listFiles(File rootDir) {
-    List<File> files = new ArrayList<>();
-
-    for (File file : rootDir.listFiles()) {
-      if (file.isDirectory()) {
-        files.addAll(_listFiles(file));
-      } else {
-        files.add(file);
-      }
+  private Stream<Path> _listFiles(Path rootDir) {
+    try {
+      return Files.list(rootDir)
+        .flatMap(path -> {
+          if (!Files.isDirectory(path)) {
+            return Stream.of(path);
+          }
+          
+          try {
+            return Files.list(path);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        });
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
-    return files;
+    
   }
 
   @Override
-  public List<String> listLines(File inputFile) {
+  public Stream<String> listLines(Path inputFile) {
     if (inputFile == null) {
       throw new RuntimeException("inputFile is null");
     }
     try {
-      return Files.lines(inputFile.toPath()).collect(Collectors.toList());
+      return Files.lines(inputFile);
     } catch (IOException e) {
-      logger.error("Error reading file: " + inputFile, e);
-      return null;
+      throw new RuntimeException(e);
     }
   }
 
@@ -88,14 +101,25 @@ public class JavaGrepImpl implements JavaGrep {
   }
 
   @Override
-  public void writeToFile(List<String> lines) throws IOException {
-    File outFile = new File(this.outFile);
-    if (lines == null || lines.isEmpty()) {
-      outFile.delete();
-      outFile.createNewFile();
+  public void writeToFile(Stream<String> lines) throws IOException {
+    Path outFile = Paths.get(this.outFile);
+    Files.deleteIfExists(outFile);
+    Files.createFile(outFile);
+
+    if (lines == null) {
+      return;
     }
 
-    Files.write(outFile.toPath(), lines);
+    BufferedWriter writer = Files.newBufferedWriter(outFile);
+    lines.forEach(t -> {
+      try {
+        writer.write(t);
+        writer.newLine();
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    });
+    writer.close();
   }
 
 }
