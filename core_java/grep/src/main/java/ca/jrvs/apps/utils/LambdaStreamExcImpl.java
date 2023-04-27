@@ -2,7 +2,6 @@ package ca.jrvs.apps.utils;
 
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
