@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15.2-alpine
+    environment:
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_USER=user
+    networks:
+      - jdbc
+    volumes:
+      - jdbc_pgdata:/var/lib.postgresql/data
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=ahmadzendebudi@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    networks:
+      - jdbc
+    ports:
+      - 8080:80
+
+networks:
+  jdbc:
+
+volumes:
+  jdbc_pgdata:
